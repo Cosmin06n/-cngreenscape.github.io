@@ -1,0 +1,828 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>CN GreenScape | Amenajări și întreținere spații verzi</title>
+
+  <meta name="description"
+        content="CN GreenScape - amenajări, întreținere spații verzi, gazon, plantări Leylandi și Tuia în Galați.">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      color: #203026;
+      background: #f5f7f2;
+      line-height: 1.6;
+    }
+
+    /* ================= HEADER ================= */
+
+    header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 1000;
+      background: rgba(255,255,255,0.96);
+      box-shadow: 0 2px 15px rgba(0,0,0,0.08);
+    }
+
+    .nav {
+      max-width: 1150px;
+      margin: auto;
+      height: 75px;
+      padding: 0 20px;
+
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .logo {
+      font-size: 25px;
+      font-weight: 900;
+      color: #17452c;
+    }
+
+    .logo span {
+      color: #4d8c55;
+    }
+
+    nav a {
+      color: #203026;
+      text-decoration: none;
+      font-weight: 700;
+      margin-left: 25px;
+    }
+
+    nav a:hover {
+      color: #4d8c55;
+    }
+
+    /* ================= HERO ================= */
+
+    .hero {
+      min-height: 100vh;
+
+      display: flex;
+      align-items: center;
+
+      background:
+        linear-gradient(
+          rgba(10, 45, 27, 0.78),
+          rgba(10, 45, 27, 0.65)
+        ),
+        url("https://images.unsplash.com/photo-1558904541-efa843a96f01?auto=format&fit=crop&w=2000&q=85")
+        center/cover;
+    }
+
+    .hero-content {
+      max-width: 1150px;
+      margin: auto;
+      padding: 120px 20px 70px;
+      color: white;
+    }
+
+    .hero-small {
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      font-size: 14px;
+      font-weight: bold;
+      margin-bottom: 20px;
+    }
+
+    .hero h1 {
+      font-size: clamp(45px, 8vw, 85px);
+      line-height: 1;
+      max-width: 850px;
+      margin-bottom: 25px;
+    }
+
+    .hero h1 span {
+      color: #b9d89c;
+    }
+
+    .hero p {
+      font-size: 20px;
+      max-width: 680px;
+      margin-bottom: 30px;
+    }
+
+    .buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 15px 25px;
+      border-radius: 8px;
+
+      text-decoration: none;
+      font-weight: 800;
+
+      transition: 0.2s;
+    }
+
+    .btn-green {
+      background: #b9d89c;
+      color: #173721;
+    }
+
+    .btn-white {
+      background: white;
+      color: #173721;
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+    }
+
+    /* ================= SECTIONS ================= */
+
+    section {
+      padding: 90px 20px;
+    }
+
+    .container {
+      max-width: 1150px;
+      margin: auto;
+    }
+
+    .section-title {
+      text-align: center;
+      margin-bottom: 45px;
+    }
+
+    .section-title h2 {
+      font-size: 42px;
+      color: #17452c;
+      margin-bottom: 12px;
+    }
+
+    .section-title p {
+      max-width: 700px;
+      margin: auto;
+      color: #667168;
+      font-size: 17px;
+    }
+
+    /* ================= SERVICES ================= */
+
+    .services {
+      background: #f5f7f2;
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+    }
+
+    .card {
+      background: white;
+      padding: 32px;
+      border-radius: 18px;
+
+      box-shadow: 0 10px 35px rgba(0,0,0,0.07);
+
+      transition: 0.25s;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+    }
+
+    .icon {
+      font-size: 40px;
+      margin-bottom: 15px;
+    }
+
+    .card h3 {
+      font-size: 23px;
+      color: #17452c;
+      margin-bottom: 10px;
+    }
+
+    .card p {
+      color: #69736c;
+    }
+
+    /* ================= ABOUT ================= */
+
+    .about {
+      background: white;
+    }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 50px;
+      align-items: center;
+    }
+
+    .about-image {
+      min-height: 450px;
+      border-radius: 20px;
+
+      background:
+        linear-gradient(
+          rgba(0,0,0,0.12),
+          rgba(0,0,0,0.12)
+        ),
+        url("https://images.unsplash.com/photo-1585320806297-9794b3e4eeae?auto=format&fit=crop&w=1200&q=85")
+        center/cover;
+    }
+
+    .about-text h2 {
+      font-size: 43px;
+      color: #17452c;
+      margin-bottom: 20px;
+    }
+
+    .about-text p {
+      color: #606b63;
+      margin-bottom: 18px;
+    }
+
+    .check {
+      margin: 12px 0;
+      font-weight: 700;
+    }
+
+    /* ================= PRICING ================= */
+
+    .pricing {
+      background: #173b27;
+      color: white;
+    }
+
+    .pricing .section-title h2 {
+      color: white;
+    }
+
+    .pricing .section-title p {
+      color: #d4ddd7;
+    }
+
+    .price-card {
+      background: white;
+      color: #203026;
+      padding: 32px;
+      border-radius: 18px;
+      position: relative;
+    }
+
+    .price-card.featured {
+      transform: scale(1.04);
+      border: 3px solid #b9d89c;
+    }
+
+    .popular {
+      position: absolute;
+      top: -14px;
+      right: 20px;
+
+      background: #b9d89c;
+      color: #173721;
+
+      padding: 6px 13px;
+      border-radius: 20px;
+
+      font-size: 12px;
+      font-weight: 900;
+    }
+
+    .price-card h3 {
+      color: #17452c;
+      font-size: 24px;
+      margin-bottom: 10px;
+    }
+
+    .price {
+      color: #4d8c55;
+      font-size: 30px;
+      font-weight: 900;
+      margin-bottom: 20px;
+    }
+
+    .price-card ul {
+      list-style: none;
+      margin-bottom: 25px;
+    }
+
+    .price-card li {
+      margin: 10px 0;
+    }
+
+    /* ================= CTA ================= */
+
+    .cta {
+      background:
+        linear-gradient(
+          rgba(20,70,43,0.88),
+          rgba(20,70,43,0.88)
+        ),
+        url("https://images.unsplash.com/photo-1598902108854-10e335adac99?auto=format&fit=crop&w=1800&q=85")
+        center/cover;
+
+      color: white;
+      text-align: center;
+    }
+
+    .cta h2 {
+      font-size: 45px;
+      margin-bottom: 15px;
+    }
+
+    .cta p {
+      max-width: 650px;
+      margin: 0 auto 25px;
+      font-size: 18px;
+    }
+
+    /* ================= CONTACT ================= */
+
+    .contact {
+      background: #eef2eb;
+    }
+
+    .contact-box {
+      max-width: 850px;
+      margin: auto;
+
+      background: white;
+      padding: 35px;
+      border-radius: 18px;
+
+      text-align: center;
+
+      box-shadow: 0 10px 35px rgba(0,0,0,0.06);
+    }
+
+    .contact-box h2 {
+      color: #17452c;
+      margin-bottom: 15px;
+    }
+
+    .contact-info {
+      margin: 25px 0;
+      font-size: 18px;
+    }
+
+    /* ================= FOOTER ================= */
+
+    footer {
+      background: #10291d;
+      color: #d9e4dc;
+      text-align: center;
+      padding: 30px 20px;
+    }
+
+    footer strong {
+      color: white;
+    }
+
+    /* ================= MOBILE ================= */
+
+    @media (max-width: 800px) {
+
+      nav {
+        display: none;
+      }
+
+      .cards {
+        grid-template-columns: 1fr;
+      }
+
+      .about-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .about-image {
+        min-height: 300px;
+      }
+
+      .price-card.featured {
+        transform: none;
+      }
+
+      .hero h1 {
+        font-size: 52px;
+      }
+
+      .section-title h2 {
+        font-size: 34px;
+      }
+
+      .cta h2 {
+        font-size: 35px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<!-- ================= HEADER ================= -->
+
+<header>
+  <div class="nav">
+
+    <div class="logo">
+      CN <span>GreenScape</span>
+    </div>
+
+    <nav>
+      <a href="#servicii">Servicii</a>
+      <a href="#despre">Despre noi</a>
+      <a href="#abonamente">Abonamente</a>
+      <a href="#contact">Contact</a>
+    </nav>
+
+  </div>
+</header>
+
+
+<!-- ================= HERO ================= -->
+
+<section class="hero">
+
+  <div class="hero-content">
+
+    <div class="hero-small">
+      Amenajări • Gazon • Spații verzi
+    </div>
+
+    <h1>
+      Grădina ta.<br>
+      <span>Mai verde. Mai frumoasă.</span>
+    </h1>
+
+    <p>
+      Transformăm curțile și spațiile verzi în locuri
+      îngrijite, elegante și plăcute, de care să te bucuri
+      în fiecare zi.
+    </p>
+
+    <div class="buttons">
+
+      <a class="btn btn-green" href="#contact">
+        Cere o ofertă
+      </a>
+
+      <a class="btn btn-white" href="#servicii">
+        Vezi serviciile
+      </a>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- ================= SERVICES ================= -->
+
+<section class="services" id="servicii">
+
+  <div class="container">
+
+    <div class="section-title">
+
+      <h2>Serviciile noastre</h2>
+
+      <p>
+        De la o simplă întreținere până la amenajarea
+        completă a unei curți.
+      </p>
+
+    </div>
+
+
+    <div class="cards">
+
+      <div class="card">
+
+        <div class="icon">🌱</div>
+
+        <h3>Gazon</h3>
+
+        <p>
+          Montaj, însămânțare, fertilizare,
+          scarificare și întreținere pentru
+          un gazon sănătos.
+        </p>
+
+      </div>
+
+
+      <div class="card">
+
+        <div class="icon">🌲</div>
+
+        <h3>Plantări</h3>
+
+        <p>
+          Plantăm Leylandi, Tuia și plante
+          decorative pentru un spațiu verde
+          elegant și bine organizat.
+        </p>
+
+      </div>
+
+
+      <div class="card">
+
+        <div class="icon">✂️</div>
+
+        <h3>Întreținere</h3>
+
+        <p>
+          Tuns gazon, tuns gard viu,
+          curățare și întreținere periodică
+          a spațiilor verzi.
+        </p>
+
+      </div>
+
+
+      <div class="card">
+
+        <div class="icon">🏡</div>
+
+        <h3>Amenajări</h3>
+
+        <p>
+          Organizăm curtea pentru un aspect
+          armonios, modern și ușor de întreținut.
+        </p>
+
+      </div>
+
+
+      <div class="card">
+
+        <div class="icon">💧</div>
+
+        <h3>Îngrijire</h3>
+
+        <p>
+          Udare, fertilizare și tratamente
+          adaptate nevoilor gazonului și plantelor.
+        </p>
+
+      </div>
+
+
+      <div class="card">
+
+        <div class="icon">🍃</div>
+
+        <h3>Curățare</h3>
+
+        <p>
+          Curățarea frunzelor, crengilor și
+          resturilor vegetale pe tot parcursul anului.
+        </p>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- ================= ABOUT ================= -->
+
+<section class="about" id="despre">
+
+  <div class="container about-grid">
+
+    <div class="about-image"></div>
+
+    <div class="about-text">
+
+      <h2>CN GreenScape</h2>
+
+      <p>
+        Creăm și întreținem spații verzi în care
+        natura și ordinea se completează.
+      </p>
+
+      <p>
+        Lucrăm atent, curat și punem accent pe
+        rezultate care se văd.
+      </p>
+
+      <div class="check">✓ Lucrăm pentru case și curți</div>
+
+      <div class="check">✓ Soluții adaptate spațiului tău</div>
+
+      <div class="check">✓ Întreținere periodică</div>
+
+      <div class="check">✓ Servicii în Galați și împrejurimi</div>
+
+      <br>
+
+      <a class="btn btn-green" href="#contact">
+        Cere o ofertă
+      </a>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- ================= PRICING ================= -->
+
+<section class="pricing" id="abonamente">
+
+  <div class="container">
+
+    <div class="section-title">
+
+      <h2>Abonamente de întreținere</h2>
+
+      <p>
+        Tu te bucuri de grădină. Noi ne ocupăm să arate bine.
+      </p>
+
+    </div>
+
+
+    <div class="cards">
+
+
+      <div class="price-card">
+
+        <h3>START</h3>
+
+        <div class="price">
+          de la 250 lei/lună
+        </div>
+
+        <ul>
+          <li>✓ Tuns gazon</li>
+          <li>✓ Curățare de bază</li>
+          <li>✓ Verificare spațiu verde</li>
+        </ul>
+
+        <a class="btn btn-green" href="#contact">
+          Solicită ofertă
+        </a>
+
+      </div>
+
+
+      <div class="price-card featured">
+
+        <div class="popular">
+          CEL MAI ALES
+        </div>
+
+        <h3>PLUS</h3>
+
+        <div class="price">
+          de la 400 lei/lună
+        </div>
+
+        <ul>
+          <li>✓ Tuns gazon</li>
+          <li>✓ Tuns gard viu</li>
+          <li>✓ Curățare</li>
+          <li>✓ Întreținere plante</li>
+        </ul>
+
+        <a class="btn btn-green" href="#contact">
+          Solicită ofertă
+        </a>
+
+      </div>
+
+
+      <div class="price-card">
+
+        <h3>PREMIUM</h3>
+
+        <div class="price">
+          de la 600 lei/lună
+        </div>
+
+        <ul>
+          <li>✓ Întreținere completă</li>
+          <li>✓ Tratamente & fertilizare</li>
+          <li>✓ Lucrări sezoniere</li>
+          <li>✓ Prioritate la programări</li>
+        </ul>
+
+        <a class="btn btn-green" href="#contact">
+          Solicită ofertă
+        </a>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- ================= CTA ================= -->
+
+<section class="cta">
+
+  <div class="container">
+
+    <h2>
+      Hai să facem curtea mai frumoasă.
+    </h2>
+
+    <p>
+      Spune-ne ce ai nevoie și îți pregătim
+      o ofertă potrivită pentru spațiul tău.
+    </p>
+
+    <a class="btn btn-green" href="#contact">
+      Contactează-ne
+    </a>
+
+  </div>
+
+</section>
+
+
+<!-- ================= CONTACT ================= -->
+
+<section class="contact" id="contact">
+
+  <div class="container">
+
+    <div class="contact-box">
+
+      <h2>Contact CN GreenScape</h2>
+
+      <p>
+        Suntem gata să discutăm despre următorul
+        tău proiect.
+      </p>
+
+      <div class="contact-info">
+
+        📍 Galați și împrejurimi<br><br>
+
+        📞 <strong>07XX XXX XXX</strong><br><br>
+
+        ✉️ <strong>contact@cngreenscape.ro</strong>
+
+      </div>
+
+      <a
+        class="btn btn-green"
+        href="tel:07XXXXXXXX"
+      >
+        Sună acum
+      </a>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- ================= FOOTER ================= -->
+
+<footer>
+
+  <p>
+    © 2026 <strong>CN GreenScape</strong>
+  </p>
+
+  <p>
+    Amenajări & întreținere spații verzi
+  </p>
+
+</footer>
+
+
+</body>
+</html>
